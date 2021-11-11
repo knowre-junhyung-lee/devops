@@ -1,0 +1,19 @@
+{
+  "family": "http-server",
+  "networkMode": "awsvpc",
+  "containerDefinitions": [{
+    "name": "http-server",
+    "image": "jhlee5391/http-server:0.0.5",
+    "portMappings": [{
+      "containerPort": 3000,
+      "hostPort": 3000,
+      "protocol": "tcp"
+    }],
+    "essential": true
+  }],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "256",
+  "memory": "512"
+}
