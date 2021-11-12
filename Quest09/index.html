@@ -8,17 +8,21 @@
 </head>
 <script type="application/javascript">
 
-    function changeIframeUrl(url){
-        document.getElementById("main_frame").src = url;
+    function requestURL(url){
+        let target = document.getElementById('frame');
+        fetch(url)
+            .then(res => res.json())
+            .then(json => target.innerHTML = json.message)
+            .catch(error => console.log("error:", error));
     }
 
 </script>
 <body>
-    <input type="button" value='ec2-api'  onclick = "changeIframeUrl('http://ec2-3-38-152-106.ap-northeast-2.compute.amazonaws.com/')"></input>
-    <input type="button" value='ecs-api'  onclick = "changeIframeUrl('http://ec2-13-124-134-71.ap-northeast-2.compute.amazonaws.com:3000/')"></input>
-    <input type="button" value='lambda-api'  onclick = "changeIframeUrl('')"></input>
+    <input type="button" value='ec2-api'  onclick = "requestURL('https://test-lb-2029208451.ap-northeast-2.elb.amazonaws.com')"></input>
+    <input type="button" value='ecs-api'  onclick = "requestURL('')"></input>
+    <input type="button" value='lambda-api'  onclick = "requestURL('')"></input>
+    <div id="frame">
 
-    <iframe id="main_frame" src="" frameborder="0"></iframe>
-    
+    </div>
 </body>
 </html>
