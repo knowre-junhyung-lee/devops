@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script type="application/javascript">
+
+    function changeIframeUrl(url){
+        document.getElementById("main_frame").src = url;
+    }
+
+</script>
+<body>
+    <input type="button" value='ec2-api'  onclick = "changeIframeUrl('http://ec2-3-38-152-106.ap-northeast-2.compute.amazonaws.com/')"></input>
+    <input type="button" value='ecs-api'  onclick = "changeIframeUrl('http://ec2-13-124-134-71.ap-northeast-2.compute.amazonaws.com:3000/')"></input>
+    <input type="button" value='lambda-api'  onclick = "changeIframeUrl('')"></input>
+
+    <iframe id="main_frame" src="" frameborder="0"></iframe>
+    
+</body>
+</html>
