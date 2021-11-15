@@ -7,7 +7,7 @@ const response =JSON.stringify({ message : "Hello, World!" })
 
 const server = http.createServer((req, res) => {
   res.statusCode = 200
-  res.setHeader("Content-Type", "text/json")
+  res.setHeader("Content-Type", "application/json")
   res.setHeader("Access-Control-Allow-Origin", "*")
   res.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
   res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
