@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta charset="UTF-8">
@@ -8,7 +9,7 @@
 </head>
 <script type="application/javascript">
 
-    function requestURL(url){
+    function requestURL(url) {
         let target = document.getElementById('frame');
         fetch(url)
             .then(res => res.json())
@@ -17,12 +18,15 @@
     }
 
 </script>
+
 <body>
-    <input type="button" value='ec2-api'  onclick = "requestURL('https://test-lb-2029208451.ap-northeast-2.elb.amazonaws.com')"></input>
-    <input type="button" value='ecs-api'  onclick = "requestURL('')"></input>
-    <input type="button" value='lambda-api'  onclick = "requestURL('')"></input>
+    <input type="button" name="ec2-api" value='ec2-api'
+        onclick="requestURL('https://test-lb-2029208451.ap-northeast-2.elb.amazonaws.com')"></input>
+    <input type="button" name="ecs-api" value='ecs-api' onclick="requestURL('')"></input>
+    <input type="button" name="lambda-api" value='lambda-api' onclick="requestURL('')"></input>
     <div id="frame">
 
     </div>
 </body>
+
 </html>
