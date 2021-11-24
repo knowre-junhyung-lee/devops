@@ -13,7 +13,7 @@
         let target = document.getElementById('frame');
         fetch(url)
             .then(res => res.json())
-            .then(json => target.innerHTML = json.message | json.body.message)
+            .then(json => target.innerHTML = json.message || JSON.parse(json.body).message)
             .catch(error => console.log("error:", error));
     }
 
