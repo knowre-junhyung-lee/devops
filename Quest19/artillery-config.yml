@@ -1,0 +1,12 @@
+config:
+  target: https://ecs.junhyung.knowre.com
+  tls:
+  rejectUnauthorized: false
+  phases:
+    - duration: 60
+      arrivalRate: 1000
+scenarios:
+  - name: '루트 경로 확인'
+    flow:
+      - get:
+          url: "/"
